@@ -1,0 +1,36 @@
+{
+  "name": "game-bejeweled",
+  "version": "1.0.0",
+  "description": "Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegomcsilva/game-bejeweled.git"
+  },
+  "keywords": [
+    "Game"
+  ],
+  "author": "Diego Marcelo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegomcsilva/game-bejeweled/issues"
+  },
+  "homepage": "https://github.com/diegomcsilva/game-bejeweled#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-live-server": "0.0.31",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1"
+  }
+}

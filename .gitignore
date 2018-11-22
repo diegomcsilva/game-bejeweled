@@ -1,0 +1,5 @@
+# Node
+node_modules
+
+# Style min
+public/css/style.min.css
