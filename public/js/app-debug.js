@@ -25,27 +25,24 @@ var dragdrop = {
     console.log('ev1', ev);
   },
   drop: function drop(ev) {
-    ev.preventDefault(); // var data = ev.dataTransfer.getData("text");
-
+    ev.preventDefault();
     html = '';
-    console.log('ev2', ev); // console.log(document.getElementById(ev.target.parentNode.id).nextSibling.previousSibling.classList.value)
-    // console.log(document.getElementById(ev.target.parentNode.id).children["0"].classList.value)
-    // if (document.getElementById(ev.target.parentNode.id).children["0"].classList.value === targetColors) {
-    // alert('par');  
-    // }  
-    // console.log(ev.target.offsetWidth)
-    // console.log(ev.clientX)
+    console.log('ev2', ev);
 
-    if (ev1 < ev.clientX && ev1 * 1.8 > ev.clientX) {
-      // console.log('oi')
+    if (ev1 < ev.clientX && ev1 * 1.25 > ev.clientX) {
       html = document.getElementById(ev.dataTransfer.getData("text")).parentNode.outerHTML;
       document.getElementById(ev.dataTransfer.getData("text")).parentNode.parentNode.removeChild(document.getElementById(ev.dataTransfer.getData("text")).parentNode);
       ev.target.parentNode.insertAdjacentHTML('afterend', html);
-    } else if (ev1 > ev.clientX && ev1 - ev.clientX < ev.target.offsetWidth * 2.5) {
-      // console.log('oill', ev.dataTransfer.getData("text").parentNode)
+      setTimeout(function () {
+        actionsGame.removeItens(document.querySelectorAll('.game .div'));
+      }, 500);
+    } else if (ev1 > ev.clientX && ev1 - ev.clientX < ev.target.offsetWidth * 3) {
       html = document.getElementById(ev.dataTransfer.getData("text")).parentNode.outerHTML;
       document.getElementById(ev.dataTransfer.getData("text")).parentNode.parentNode.removeChild(document.getElementById(ev.dataTransfer.getData("text")).parentNode);
       ev.target.parentNode.insertAdjacentHTML('beforebegin', html);
+      setTimeout(function () {
+        actionsGame.removeItens(document.querySelectorAll('.game .div'));
+      }, 500);
     }
   }
 };
@@ -57,9 +54,14 @@ var actionsGame = {
       var thisColorNext = list[index + 1] ? list[index + 1] : false;
 
       if (thisColor === (thisColorNext ? thisColorNext.classList.value : false) && thisColor === (thisColorPrev ? thisColorPrev.classList.value : false)) {
-        item.parentNode.parentNode.removeChild(item.parentNode);
-        thisColorPrev.parentNode.parentNode.removeChild(thisColorPrev.parentNode);
-        thisColorNext.parentNode.parentNode.removeChild(thisColorNext.parentNode);
+        item.classList.add('equals');
+        thisColorPrev.classList.add('equals');
+        thisColorNext.classList.add('equals');
+        setTimeout(function () {
+          item.parentNode.parentNode.removeChild(item.parentNode);
+          thisColorPrev.parentNode.parentNode.removeChild(thisColorPrev.parentNode);
+          thisColorNext.parentNode.parentNode.removeChild(thisColorNext.parentNode);
+        }, 1000);
       }
     });
   }
