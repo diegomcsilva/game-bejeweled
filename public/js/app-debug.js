@@ -1,6 +1,6 @@
 "use strict";
 
-var targetColors, ev1, html, evDefault;
+var targetColors, ev1, html, partent, evDefault;
 var colors = ['gulp', 'css', 'node', 'js', 'html'];
 
 var constructGameBlocks = function constructGameBlocks() {
@@ -25,20 +25,20 @@ var dragdrop = {
   },
   drop: function drop(ev) {
     ev.preventDefault();
-    html = ''; // console.log('ev2', ev);
-
     evDefault = ev.dataTransfer.getData("text");
+    html = document.getElementById(evDefault).parentNode.outerHTML;
+    partent = document.getElementById(evDefault).parentNode.parentNode;
 
-    if (ev1 < ev.clientX && ev1 * 1.25 > ev.clientX) {
-      html = document.getElementById(evDefault).parentNode.outerHTML;
-      document.getElementById(evDefault).parentNode.parentNode.removeChild(document.getElementById(evDefault).parentNode);
+    if (ev1 < ev.clientX && ev1 * 1.45 > ev.clientX) {
+      partent.removeChild(document.getElementById(evDefault).parentNode);
       ev.target.parentNode.insertAdjacentHTML('afterend', html);
       setTimeout(function () {
         actionsGame.removeItens(document.querySelectorAll('.game .div'));
       }, 500);
     } else if (ev1 > ev.clientX && ev1 - ev.clientX < ev.target.offsetWidth * 3) {
-      html = document.getElementById(evDefault).parentNode.outerHTML;
-      document.getElementById(evDefault).parentNode.parentNode.removeChild(document.getElementById(evDefault).parentNode);
+      console.log('oi');
+      partent.removeChild(document.getElementById(evDefault).parentNode);
+      console.log(html);
       ev.target.parentNode.insertAdjacentHTML('beforebegin', html);
       setTimeout(function () {
         actionsGame.removeItens(document.querySelectorAll('.game .div'));
