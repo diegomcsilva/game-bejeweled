@@ -7,6 +7,8 @@ var minify = require('gulp-minify');
 var webserver = require('gulp-webserver');
 const babel = require('gulp-babel');
 
+// var browserify = require('gulp-browserify');
+
 gulp.task('default', ['webserver', 'sass', 'watch', 'compress']);
 
 gulp.task('sass', function () {
@@ -51,3 +53,13 @@ gulp.task('webserver', ['watch'], function () {
       open: true,
     }))
 });
+
+// Fix for usage export and import
+// gulp.task('scripts', function() {
+//   // Single entry point to browserify
+//   gulp.src('public/js/app-min.js')
+//       .pipe(browserify({
+//         insertGlobals : true,
+//       }))
+//       .pipe(gulp.dest('./build/js'))
+// });
