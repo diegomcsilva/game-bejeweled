@@ -1,0 +1,59 @@
+$gulp: #da4b48;
+$css: #0a70be;
+$node: #78b260;
+$html: #e44d26;
+$js: #f7df1e;
+
+.gulp {
+    background-color: $gulp;
+}
+
+.css {
+    background-color: $css;
+}
+
+.node {
+    background-color: $node;
+}
+
+.html {
+    background-color: $html;
+}
+
+.js {
+    background-color: $js;
+}
+
+.opacity {
+    opacity: 0;
+    transform: all .5s ease;
+}
+
+.div {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    opacity: 1;
+    transform: all .5s ease;
+    // border-radius: 5px;
+}
+
+.game {
+    max-width: 500px;
+    width: 100%;
+    max-height: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 5px;
+    box-shadow: 0 0 40px -11px #f7df1e;
+    border: 1px solid #f4f4f4;
+}
+
+.equals {
+    box-shadow: 0 0 10px 3px white;
+}

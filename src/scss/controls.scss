@@ -1,0 +1,73 @@
+// Player
+.controls {
+    display: flex;
+    height: 40px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 150px;
+    &__music--play {
+        width: 50%;
+        cursor: pointer;
+        img {
+            position: absolute;
+            transition: all .5s ease;
+        }
+
+        .icon-start {
+            opacity: 0;
+            z-index: -1;
+        }  
+        
+        .icon-pause {
+            opacity: 1;
+        }
+    }
+
+    &__music--mute {
+        width: 50%;
+        cursor: pointer;
+        img {
+            position: absolute;
+            transition: all .5s ease;
+        }
+
+        .icon-not-mute {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .icon-mute {
+            opacity: 1;
+        }
+    }
+}
+
+.start {
+    .icon-start {
+        opacity: 1;
+        z-index: 1;
+        transition: all .5s ease;
+    }
+
+    .icon-pause {
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease;
+    }
+}
+
+
+.not-mute {
+    .icon-not-mute {
+        opacity: 1;
+        z-index: 1;
+        transition: all .5s ease;
+    }
+
+    .icon-mute {
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease;
+    }
+}
