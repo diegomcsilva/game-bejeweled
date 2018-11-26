@@ -37,7 +37,7 @@ const dragdrop = {
     html = document.getElementById(evDefault).parentNode.outerHTML
     partent = document.getElementById(evDefault).parentNode.parentNode
 
-    if ((ev1 < ev.clientX) && ((ev1 * 1.45) > ev.clientX)) {
+    if ((ev1 < ev.clientX) && ((ev1 * 1.4) > ev.clientX)) {
       partent.removeChild(document.getElementById(evDefault).parentNode)
       ev.target.parentNode.insertAdjacentHTML('afterend', html);
       setTimeout(function () {

@@ -38,8 +38,14 @@ $js: #f7df1e;
     padding: 10px;
     border: 1px solid #000;
     opacity: 1;
-    transform: all .5s ease;
-    // border-radius: 5px;
+    transition: all .5s ease;
+
+    @include mobile {
+        width: 22px;
+        height: 22px;
+        margin: 4px;
+        padding: 4px;
+    }
 }
 
 .game {
@@ -52,6 +58,13 @@ $js: #f7df1e;
     padding: 5px;
     box-shadow: 0 0 40px -11px #f7df1e;
     border: 1px solid #f4f4f4;
+
+    @include mobile {
+        padding: 0;
+        margin: 30px auto;
+        max-width: 320px;
+        max-height: 320px;
+    }
 }
 
 .equals {
